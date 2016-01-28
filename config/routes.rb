@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require "#{Rails.root}/app/models/webspellchecker.rb"
+  
   get 'dictionary_words/spellcheck'
 
   resources :comments
