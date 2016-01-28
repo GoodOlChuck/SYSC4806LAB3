@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dictionary_words/spellcheck'
+
   resources :comments
   resources :blogposts
   root 'blogposts#index'
@@ -56,4 +58,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get 'dictionary_words/spellcheck'
+  get 'spellcheck/:term' => 'dictionary_words#spellcheck'
 end
