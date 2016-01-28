@@ -11,12 +11,12 @@ class WebSpellchecker < Spellchecker
     #end
     #result.order("count DESC")
     
-    result = DictionaryWord.select("word","count").where(word: words).order("count DESC")
+    result = DictionaryWord.select("word, count").where(word: words).order(count: :desc)
     resmap = result.map{|x| x[:word]}
     if resmap.empty? 
       return [] 
     else
-      return result
+      return resmap
     end
   end
 
